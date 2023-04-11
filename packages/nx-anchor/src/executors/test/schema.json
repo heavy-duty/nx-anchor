@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Test executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "projectPath": {
+      "type": "string",
+      "description": "The path to the project"
+    },
+    "monitor": {
+      "type": "boolean",
+      "description": "Print logs from command",
+      "default": false
+    }
+  },
+  "required": []
+}
