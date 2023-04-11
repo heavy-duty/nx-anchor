@@ -1,9 +1,0 @@
-export const anchorVersion = '^0.27.0';
-export const chaiVersion = '^4.3.4';
-export const mochaVersion = '^9.0.3';
-export const tsMochaVersion = '^10.0.0';
-export const bnJsTypesVersion = '^5.1.0';
-export const chaiTypesVersion = '^4.3.0';
-export const mochaTypesVersion = '^9.0.0';
-export const typescriptVersion = '^4.3.5';
-export const prettierVersion = '^2.6.2';
