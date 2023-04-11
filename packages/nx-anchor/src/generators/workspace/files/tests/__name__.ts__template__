@@ -1,14 +1,17 @@
-import { Provider, setProvider, workspace } from '@project-serum/anchor';
+import * as anchor from "@coral-xyz/anchor";
+import { Program } from "@coral-xyz/anchor";
+import { <%= className %> } from "../target/types/<%= crateName %>";
 
-describe('<%= crateName %>', () => {
-
+describe("<%= crateName %>", () => {
   // Configure the client to use the local cluster.
-  setProvider(Provider.env());
+  anchor.setProvider(anchor.AnchorProvider.env());
 
-  it('Is initialized!', async () => {
+  const program = anchor.workspace.<%= className %> as Program<<%= className %>>;
+
+  it("Is initialized!", async () => {
     // Add your test here.
-    const program = workspace.<%= className %>;
-    const tx = await program.rpc.initialize();
+    const tx = await program.methods.initialize().rpc();
     console.log("Your transaction signature", tx);
   });
 });
+

@@ -11,22 +11,26 @@ import {
   mochaTypesVersion,
   mochaVersion,
   typescriptVersion,
-  web3JsVersion,
+  bnJsTypesVersion,
+  prettierVersion,
+  tsMochaVersion
 } from './versions';
 
 export function addPackages(tree: Tree): GeneratorCallback {
   return addDependenciesToPackageJson(
     tree,
     {
-      '@project-serum/anchor': anchorVersion,
-      '@solana/web3.js': web3JsVersion,
+      '@coral-xyz/anchor': anchorVersion,
     },
     {
-      '@types/chai': chaiTypesVersion,
-      '@types/mocha': mochaTypesVersion,
       chai: chaiVersion,
       mocha: mochaVersion,
+      'ts-mocha': tsMochaVersion,
+      '@types/bn.js': bnJsTypesVersion,
+      '@types/chai': chaiTypesVersion,
+      '@types/mocha': mochaTypesVersion,
       typescript: typescriptVersion,
+      prettier: prettierVersion
     }
   );
 }
