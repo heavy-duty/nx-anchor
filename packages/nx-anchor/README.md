@@ -1,11 +1,9 @@
-# nx-anchor
+# @heavy-duty/nx-anchor
 
-This library was generated with [Nx](https://nx.dev).
+This is Nx plugin gives you the ability to create @coral-xyz/anchor workspaces inside an Nx workspace.
 
-## Building
+## Anchor versions 
 
-Run `nx build nx-anchor` to build the library.
-
-## Running unit tests
-
-Run `nx test nx-anchor` to execute the unit tests via [Jest](https://jestjs.io).
+| Anchor  | @heavy-duty/nx-anchor      |
+| ------- | -------------------------- |
+| 0.27.0  | 0.1.0                      |
