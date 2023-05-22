@@ -1,0 +1,16 @@
+[workspace]
+members = []
+
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "<%= cluster %>"
+wallet = "~/.config/solana/id.json"
