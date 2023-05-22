@@ -5,14 +5,15 @@
   "sourceRoot": "packages/nx-anchor-e2e/src",
   "targets": {
     "e2e": {
-      "executor": "@nrwl/nx-plugin:e2e",
+      "executor": "@nx/jest:jest",
       "options": {
-        "target": "nx-anchor:build",
-        "jestConfig": "packages/nx-anchor-e2e/jest.config.ts"
-      }
+        "jestConfig": "packages/nx-anchor-e2e/jest.config.ts",
+        "runInBand": true
+      },
+      "dependsOn": ["nx-anchor:build"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/nx-anchor-e2e/**/*.ts"]
