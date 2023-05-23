@@ -3,10 +3,15 @@
   "name": "workspace",
   "version": "0.0.1",
   "generators": {
-    "workspace": {
-      "factory": "./src/generators/workspace/generator",
-      "schema": "./src/generators/workspace/schema.json",
-      "description": "workspace generator"
+    "program": {
+      "factory": "./src/generators/program/generator",
+      "schema": "./src/generators/program/schema.json",
+      "description": "program generator"
+    },
+    "init-workspace": {
+      "factory": "./src/generators/init-workspace/generator",
+      "schema": "./src/generators/init-workspace/schema.json",
+      "description": "init workspace generator"
     }
   }
 }

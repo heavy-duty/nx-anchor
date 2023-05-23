@@ -9,16 +9,16 @@ import {
 } from '@nx/devkit';
 import * as path from 'path';
 import { toCrateName } from '../../utils';
-import { WorkspaceGeneratorSchema } from './schema';
+import { ProgramGeneratorSchema } from './schema';
 
-interface NormalizedSchema extends WorkspaceGeneratorSchema {
+interface NormalizedSchema extends ProgramGeneratorSchema {
   projectName: string;
   projectRoot: string;
 }
 
 function normalizeOptions(
   tree: Tree,
-  options: WorkspaceGeneratorSchema
+  options: ProgramGeneratorSchema
 ): NormalizedSchema {
   const projectName = names(options.name).fileName;
   const projectRoot = `${getWorkspaceLayout(tree).appsDir}/${projectName}`;
@@ -47,7 +47,7 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
   );
 }
 
-export default async function (tree: Tree, options: WorkspaceGeneratorSchema) {
+export default async function (tree: Tree, options: ProgramGeneratorSchema) {
   const normalizedOptions = normalizeOptions(tree, options);
   addProjectConfiguration(tree, normalizedOptions.projectName, {
     root: normalizedOptions.projectRoot,
@@ -77,5 +77,7 @@ export default async function (tree: Tree, options: WorkspaceGeneratorSchema) {
     },
   });
   addFiles(tree, normalizedOptions);
+
+  // update anchor toml to include the new program
   await formatFiles(tree);
 }

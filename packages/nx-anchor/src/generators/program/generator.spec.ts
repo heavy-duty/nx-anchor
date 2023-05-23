@@ -1,12 +1,11 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nx/devkit';
-
 import generator from './generator';
-import { WorkspaceGeneratorSchema } from './schema';
+import { ProgramGeneratorSchema } from './schema';
 
 describe('sample generator', () => {
   let appTree: Tree;
-  const options: WorkspaceGeneratorSchema = { name: 'test' };
+  const options: ProgramGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();
